@@ -1,0 +1,30 @@
+<mat-dialog-content class="main">
+  <table>
+    <tr>
+      <th colspan="2">Choose members:</th>
+      <th>Chat name:</th>
+    </tr>
+    <tr>
+      <td>
+        <div *ngFor="let participant of allParticipants" (click)="add(participant)">
+          {{participant.name}}
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let part of list" (click)="remove(part)">
+          {{part.name}}
+        </div>
+      </td>
+      <td>
+        <form>
+          <input type="text" #chatName>
+          <button (click)="createGroupChat()">Create</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <mat-dialog-actions>
+    <button mat-button type="button" mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+
+</mat-dialog-content>
